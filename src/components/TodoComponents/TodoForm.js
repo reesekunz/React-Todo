@@ -26,7 +26,10 @@ class TodoForm extends React.Component {
     event.preventDefault();
     // getting the text from the input and using it to update the state property
     this.props.addItem(this.state.item);
+    this.setState({ item: " " });
   };
+
+  //
 
   render() {
     return (
