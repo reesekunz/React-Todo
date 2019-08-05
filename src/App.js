@@ -4,7 +4,7 @@
 
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
-import TodoForm from "./components/TodoComponents/TodoForm"
+import TodoForm from "./components/TodoComponents/TodoForm";
 
 const toDoData = [
   {
@@ -27,7 +27,7 @@ class App extends React.Component {
     };
   }
   // new class property - don't need a const = in classes
-  toggleItem = (id) => {
+  toggleItem = id => {
     console.log("toggle item id", id);
     // update our state (toDo) on toggle
     // use this.setState
@@ -41,7 +41,7 @@ class App extends React.Component {
         if (item.id === id) {
           return {
             ...item,
-            // ... item is the spread operator, would be the is same as typing each one out 
+            // ... item is the spread operator, would be the is same as typing each one out
             // task: item.task,
             // id: item.id,
             // completed: item.completed
@@ -58,14 +58,33 @@ class App extends React.Component {
     });
   };
 
+  // getting itemTask from wherever addItem is being invoked
+  addItem = itemTask => {
+    const newItem = {
+      task: itemTask,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      // Adding new item object created above to end of toDo array (used in ToDoForm.js)
+      toDo: [...this.state.toDo, newItem]
+    });
+  };
+
+  clearCompleted = () => {
+    this.setState({
+      toDo: this.state.toDo.filter(item => !item.completed)
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <div className="Header">
           <h2>To-do List:</h2>
-          <TodoForm />
+          <TodoForm addItem={this.addItem} />
           {/* // access class property with 'this' keyword */}
-          <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem} />
+          <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted} />
         </div>
       </div>
     );

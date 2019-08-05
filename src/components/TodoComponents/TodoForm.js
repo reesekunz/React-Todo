@@ -20,9 +20,11 @@ class TodoForm extends React.Component {
     });
   };
 
+  // Add new import to todo list
   submitItem = event => {
     // need prevent default on form submissions and button clicks
     event.preventDefault();
+    // getting the text from the input and using it to update the state property
     this.props.addItem(this.state.item);
   };
 
