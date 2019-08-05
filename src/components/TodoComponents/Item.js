@@ -9,7 +9,7 @@ const Item = props => {
       //   className={`item${props.item.purchased ? ' purchased' : ''}`}
       onClick={() => props.toggleItem(props.item.id)}
     >
-      <p>{props.item.name}</p>
+      <p>{props.item.task}</p>
     </div>
   );
 };
