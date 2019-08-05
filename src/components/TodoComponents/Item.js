@@ -6,7 +6,7 @@ const Item = props => {
   return (
     <div
       // className below is for syling the item to mark it out depending on whether or not its complete/purchased
-      //   className={`item${props.item.purchased ? ' purchased' : ''}`}
+      className={`item${props.item.completed ? ' completed' : ''}`}
       onClick={() => props.toggleItem(props.item.id)}
     >
       <p>{props.item.task}</p>

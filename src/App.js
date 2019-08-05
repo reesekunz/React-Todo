@@ -5,6 +5,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import "./Todo.css";
 
 const toDoData = [
   {
@@ -15,6 +16,16 @@ const toDoData = [
   {
     task: "Bake Cookies",
     id: 1528817084358,
+    completed: false
+  },
+  {
+    task: "Finish ToDo Project",
+    id: 7,
+    completed: false
+  },
+  {
+    task: "Take Nap",
+    id: 8,
     completed: false
   }
 ];
@@ -84,7 +95,11 @@ class App extends React.Component {
           <h2>To-do List:</h2>
           <TodoForm addItem={this.addItem} />
           {/* // access class property with 'this' keyword */}
-          <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted} />
+          <TodoList
+            toDo={this.state.toDo}
+            toggleItem={this.toggleItem}
+            clearCompleted={this.clearCompleted}
+          />
         </div>
       </div>
     );
