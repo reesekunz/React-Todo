@@ -2,43 +2,37 @@
 // - All of your application data will be stored here on `<App />`.
 // - All of your `handler` functions should live here on `<App />`.
 
-import React from 'react';
-import List from './components/TodoComponents/TodoList'
+import React from "react";
+import TodoList from "./components/TodoComponents/TodoList";
 
-const toDo = [
+const toDoData = [
   {
-    task: 'Organize Garage',
+    task: "Organize Garage",
     id: 1528817077286,
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: "Bake Cookies",
     id: 1528817084358,
     completed: false
   }
 ];
 
-
 class App extends React.Component {
   constructor() {
-  super();
-  this.state = {
-  list: "hello from state"
-
-  }
-
+    super();
+    this.state = {
+      toDo: toDoData
+    };
   }
   render() {
     return (
       <div className="App">
         <div className="Header">
-        <h2>To-do List:
-        </h2>
-        <List propsList= {this.state.list} />
+          <h2>To-do List:</h2>
+          <TodoList toDo={this.state.toDo} />
+        </div>
       </div>
-      </div>
-
-
     );
   }
 }
