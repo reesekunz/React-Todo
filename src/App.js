@@ -4,6 +4,7 @@
 
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
+import TodoForm from "./components/TodoComponents/TodoForm"
 
 const toDoData = [
   {
@@ -62,6 +63,7 @@ class App extends React.Component {
       <div className="App">
         <div className="Header">
           <h2>To-do List:</h2>
+          <TodoForm />
           {/* // access class property with 'this' keyword */}
           <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem} />
         </div>
