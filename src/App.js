@@ -92,7 +92,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="Header">
-          <h2>To-do List:</h2>
+          <h2>Reese's To-do List:</h2>
           <TodoForm addItem={this.addItem} />
           {/* // access class property with 'this' keyword */}
           <TodoList

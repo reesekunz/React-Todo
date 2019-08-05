@@ -26,6 +26,7 @@ class TodoForm extends React.Component {
     event.preventDefault();
     // getting the text from the input and using it to update the state property
     this.props.addItem(this.state.item);
+    // clears form on submission
     this.setState({ item: " " });
   };
 
@@ -41,7 +42,7 @@ class TodoForm extends React.Component {
             name="item"
             onChange={this.handleChanges}
           />
-          <button>Add Task</button>
+          <button className="addTask">Add Task</button>
         </form>
       </>
     );

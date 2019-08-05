@@ -8,4 +8,14 @@
   justify-content: center;
   align-items: center;
   font-family: cursive;
+  height: auto;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.addTask {
+margin-left: 4px;
+
 }
